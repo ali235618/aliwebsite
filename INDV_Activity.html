@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eco-Friendly Shop</title>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-green: #388e3c;
+      --dark-green: #2e7d32;
+      --light-green: #d7f2d8;
+      --accent: #e8f5e9;
+      --text: #333;
+      --white: #fff;
+      --card-bg: #f3fff4;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    #navbar {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      background: linear-gradient(to right, #43a047, #2e7d32);
+      color: white;
+      padding: 1em 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    #navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    #navbar a:hover {
+      color: #c8e6c9;
+    }
+
+    section {
+      padding: 3em 2em;
+      background-color: var(--white);
+      margin: 1em auto;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--dark-green);
+      margin-bottom: 1em;
+      font-size: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1em;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.8em;
+    }
+
+    .product-description {
+      font-size: 0.95em;
+      color: #555;
+      margin: 0.5em 0;
+    }
+
+    button {
+      background-color: var(--primary-green);
+      color: white;
+      padding: 0.75em 1.8em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--dark-green);
+    }
+
+    .form-group {
+      margin: 1.2em 0;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.9em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .dark-mode section {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    .dark-mode .product-card {
+      background: #2c2c2c;
+      color: #e0e0e0;
+    }
+
+    .dark-mode button {
+      background-color: #66bb6a;
+    }
+
+    .dark-mode button:hover {
+      background-color: #43a047;
+    }
+
+    @media (max-width: 768px) {
+      #navbar {
+        flex-direction: column;
+        gap: 1em;
+        padding: 0.8em 0;
+      }
+
+      .product-card img {
+        height: 140px;
+      }
+
+      button {
+        padding: 0.6em 1.5em;
+        font-size: 0.9em;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      input, textarea, select {
+        font-size: 0.9em;
+        padding: 0.7em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#calculator">Carbon Calculator</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Eco-Friendly Shop</h2>
+    <p class="intro-text">
+      Discover a curated selection of environmentally conscious products designed to reduce waste and promote sustainability. From reusable bags and bamboo toothbrushes to solar-powered chargers and plant-based soaps, each item is carefully chosen to help you make greener everyday choices.
+    </p>
+    <p class="intro-text">
+      As global awareness about climate change and pollution rises, eco-friendly products have become more than just a trend—they're a necessity. Our goal is to provide easy access to items that are biodegradable, reusable, and made with minimal environmental impact. Together, we can build a more sustainable future.
+    </p>
+  </section>
+ 
+  <section id="products">
+    <h2>Eco-Friendly Products</h2>
+    <div class="product-grid">
+      <!-- First row -->
+      <div class="product-card">
+        <img src="eco-bag.jpg" alt="Eco Bag">
+        <h3>Reusable Eco Bag</h3>
+        <p>$12.99</p>
+		 <p class="product-description">A durable, eco-friendly bag made from recycled materials. Perfect for your daily shopping needs!</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="BambooToothbrush.jpg" alt="Bamboo Toothbrush">
+        <h3>Bamboo Toothbrush</h3>
+        <p>$4.50</p>
+		<p class="product-description">A sustainable toothbrush with a bamboo handle. Say goodbye to plastic brushes!</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="Solar-Powered Charger.jpg" alt="Solar Charger">
+        <h3>Solar-Powered Charger</h3>
+        <p>$25.99</p>
+		<p class="product-description">Charge your devices on the go with solar power. Ideal for outdoor enthusiasts and travelers!</p>
+        <button>Buy Now</button>
+      </div>
+      
+      <!-- Second row -->
+      <div class="product-card">
+        <img src="Compostable Phone Case.jpg" alt="Compostable Phone Case">
+        <h3>Compostable Phone Case</h3>
+        <p>$14.99</p>
+		<p class="product-description">A sustainable phone case made from compostable materials. Protect your phone and the planet!</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="Beeswax Food Wraps (3-pack).jpg" alt="Beeswax Wraps">
+        <h3>Beeswax Food Wraps (3-pack)</h3>
+        <p>$10.50</p>
+		 <p class="product-description">Eco-friendly food wraps made from beeswax. Great for keeping your food fresh!</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="Recycled Paper Notebook.jpg" alt="Recycled Notebook">
+        <h3>Recycled Paper Notebook</h3>
+        <p>$6.75</p>
+		<p class="product-description">A notebook made from recycled paper. Perfect for your eco-conscious journaling needs!</p>
+        <button>Buy Now</button>
+      </div>
+
+      <!-- Third row -->
+      <div class="product-card">
+        <img src="Eco-Friendly Mug.jpg" alt="Eco-Friendly Mug">
+        <h3>Eco-Friendly Mug</h3>
+        <p>$8.99</p>
+		<p class="product-description">Reusable mug made from sustainable materials—great for coffee lovers on the go.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="Stainless Steel Straws (Set of 4).jpg" alt="Stainless Steel Straws">
+        <h3>Stainless Steel Straws (Set of 4)</h3>
+        <p>$7.50</p>
+		<p class="product-description">Durable, reusable straws with a cleaning brush—perfect for sustainable sipping.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="Plant-Based Soap.jpg" alt="Plant-Based Soap">
+        <h3>Plant-Based Soap</h3>
+        <p>$5.99</p>
+		<p class="product-description">Reusable mug made from sustainable materials—great for coffee lovers on the go.</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+ <section id="calculator">
+    <h2>Enhanced Carbon Footprint Calculator</h2>
+    <p class="intro-text">Estimate your weekly carbon footprint based on product usage and energy consumption.</p>
+    <form id="carbonForm">
+      <div class="form-group">
+        <label for="usage">Average hours of electronic device use per week:</label>
+        <input type="number" id="usage" min="0" required />
+        <div class="error-message" id="error-usage">Please enter a non-negative number.</div>
+      </div>
+      <div class="form-group">
+        <label for="transport">Kilometers traveled by car per week:</label>
+        <input type="number" id="transport" min="0" required />
+        <div class="error-message" id="error-transport">Please enter a non-negative number.</div>
+      </div>
+      <div class="form-group">
+        <label for="meals">Number of meat-based meals per week:</label>
+        <input type="number" id="meals" min="0" required />
+        <div class="error-message" id="error-meals">Please enter a non-negative number.</div>
+      </div>
+      <button type="submit">Calculate</button>
+      <p id="carbonOutput"></p>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  
+
+  <script>
+    document.getElementById('carbonForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let hasError = false;
+
+      const usageInput = document.getElementById('usage');
+      const transportInput = document.getElementById('transport');
+      const mealsInput = document.getElementById('meals');
+
+      const usage = parseFloat(usageInput.value);
+      const transport = parseFloat(transportInput.value);
+      const meals = parseFloat(mealsInput.value);
+
+      document.getElementById('error-usage').style.display = usage < 0 ? 'block' : 'none';
+      document.getElementById('error-transport').style.display = transport < 0 ? 'block' : 'none';
+      document.getElementById('error-meals').style.display = meals < 0 ? 'block' : 'none';
+
+      if (usage < 0 || transport < 0 || meals < 0) {
+        return;
+      }
+
+      const carbonFromUsage = usage * 0.3;
+      const carbonFromTransport = transport * 0.21;
+      const carbonFromMeals = meals * 2.5;
+
+      const totalCarbon = carbonFromUsage + carbonFromTransport + carbonFromMeals;
+
+      document.getElementById('carbonOutput').innerText = `Your estimated weekly CO₂ footprint is: ${totalCarbon.toFixed(2)} kg`;
+    });
+  </script>
+</body>
+</html>
